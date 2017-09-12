@@ -1,4 +1,3 @@
-SetKeyDelay, 1
 Size := 10
 Board := Object()
 Player := Object(0,0)
@@ -109,7 +108,7 @@ AddPits(Board, Size){
 				Board[Mod(y+1+Size,Size)*Size + Mod(x+1+Size,Size)] := 5
 			else if (Board[Mod(y+1+Size,Size)*Size + Mod(x+1+Size,Size)] == 0)
 				Board[Mod(y+1+Size,Size)*Size + Mod(x+1+Size,Size)] :=3
-			
+
 
 			i++
 		}
@@ -169,7 +168,7 @@ Shoot(Player, Direction, Size, Board){
 	Return won
 }
 
-^![::
+^!n::
 	Board := NewBoard(Size)
 	Player := AddHunter(Board, Size)
 	if(Debug == 1){
@@ -200,7 +199,7 @@ Shoot(Player, Direction, Size, Board){
 		}
 	}
 	Clipboard = You are on the hunt for the Wumpus! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
-	Send ^v  
+	Send ^v
 Return
 
 ^!w::
@@ -209,15 +208,15 @@ Return
 	if(Board[Player[1]*Size+Player[0]] == Empty)
 		Clipboard = You move north! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Slime)
-		Clipboard = You move north! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You move north! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Pit)
-		Clipboard = You move north! The hunter has fallen into a pit! You Lose! 
+		Clipboard = You move north! The hunter has fallen into a pit! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Blood)
-		Clipboard = You move north! You smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west! 
+		Clipboard = You move north! You smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Wumpus)
 		Clipboard = You move north! The hunter has walked into the lair of the Wumpus, the Wumpus will eat well tonight! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Goo)
-		Clipboard = You move north! You feel a breeze! and you smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!   
+		Clipboard = You move north! You feel a breeze! and you smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	Send ^v
 Return
 
@@ -227,11 +226,11 @@ Return
 	if(Board[Player[1]*Size+Player[0]] == Empty)
 		Clipboard = You move south! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Slime)
-		Clipboard = You move south! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You move south! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Pit)
-		Clipboard = You move south! The hunter has fallen into a pit! You Lose! 
+		Clipboard = You move south! The hunter has fallen into a pit! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Blood)
-		Clipboard = You move south! You smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You move south! You smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Wumpus)
 		Clipboard = You move south! The hunter has walked into the lair of the Wumpus, the Wumpus will eat well tonight! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Goo)
@@ -245,9 +244,9 @@ Return
 	if(Board[Player[1]*Size+Player[0]] == Empty)
 		Clipboard = You move east! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Slime)
-		Clipboard = You move east! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You move east! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Pit)
-		Clipboard = You move east! The hunter has fallen into a pit! You Lose! 
+		Clipboard = You move east! The hunter has fallen into a pit! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Blood)
 		Clipboard = You move east! You smell something foul! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Wumpus)
@@ -263,11 +262,11 @@ Return
 	if(Board[Player[1]*Size+Player[0]] == Empty)
 		Clipboard = You move west! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Slime)
-		Clipboard = You move west! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You move west! You feel a breeze! You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Pit)
-		Clipboard = You move west! The hunter has fallen into a pit! You Lose! 
+		Clipboard = You move west! The hunter has fallen into a pit! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Blood)
-		Clipboard = You smell something foul{!} You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!  
+		Clipboard = You smell something foul{!} You have 1 arrow, you may move or shoot in the directions of north, south, east, or west!
 	if(Board[Player[1]*Size+Player[0]] == Wumpus)
 		Clipboard = You move west! The hunter has walked into the lair of the Wumpus, the Wumpus will eat well tonight! You Lose!
 	if(Board[Player[1]*Size+Player[0]] == Goo)
@@ -279,7 +278,7 @@ Return
 	if(Shoot(Player,North,Size,Board) == 1)
 		Clipboard = You fire an arrow north! The hunter has slain the Wumpus, You Win!
 	else
-		Clipboard = You fire an arrow north! The hunter has been slain by an arrow, You Lose! 
+		Clipboard = You fire an arrow north! The hunter has been slain by an arrow, You Lose!
 	Send ^v
 Return
 
@@ -287,15 +286,15 @@ Return
 	if(Shoot(Player,South,Size,Board) == 1)
 		Clipboard = You fire an arrow south! The hunter has slain the Wumpus, You Win!
 	else
-		Clipboard = You fire an arrow south! The hunter has been slain by an arrow, You Lose! 
-	Send ^v 
+		Clipboard = You fire an arrow south! The hunter has been slain by an arrow, You Lose!
+	Send ^v
 Return
 
 ^!Left::
 	if(Shoot(Player,West,Size,Board) == 1)
 		Clipboard = You fire an arrow east! The hunter has slain the Wumpus, You Win!
 	else
-		Clipboard = You fire an arrow east! The hunter has been slain by an arrow, You Lose!  
+		Clipboard = You fire an arrow east! The hunter has been slain by an arrow, You Lose!
 	Send ^v
 Return
 
@@ -303,7 +302,10 @@ Return
 	if(Shoot(Player,East,Size,Board) == 1)
 		Clipboard = You fire an arrow west! The hunter has slain the Wumpus, You Win!
 	else
-		Clipboard = You fire an arrow west! The hunter has been slain by an arrow, You Lose!  
+		Clipboard = You fire an arrow west! The hunter has been slain by an arrow, You Lose!
 	Send ^v
 Return
 
+^!0::
+	Run games.ahk
+	ExitApp
