@@ -1,3 +1,9 @@
+;	The player is put in a randomly generated wumpus lair
+; to start a new game hit the n key
+; to move use the wasd keys
+; to shoot use the arrow keys
+; to select other games, hit the 0 key
+
 Size := 10
 Board := Object()
 Player := Object(0,0)
