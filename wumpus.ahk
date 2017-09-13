@@ -10,7 +10,8 @@ Pit = 1
 Wumpus = 2
 Slime = 3
 Blood = 4
-Goo = 5
+SlimeAndBlood = 5
+
 
 ;Directions
 North = 0
